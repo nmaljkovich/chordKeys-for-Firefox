@@ -1,0 +1,22 @@
+:host { all: initial; }
+.chordkeys-inline { display: inline-flex; align-items: center; vertical-align: baseline; white-space: nowrap; }
+.chordkeys-trigger { display: inline-grid; width: 23px; height: 23px; margin-inline-start: 3px; padding: 0; place-items: center; border: 1px solid #c8d9cc; border-radius: 50%; color: #234f3e; background: #f0f6f0; font: 700 13px/1 system-ui, sans-serif; cursor: pointer; touch-action: manipulation; }
+.chordkeys-trigger:focus-visible, .chordkeys-close:focus-visible { outline: 3px solid #a5c9ad; outline-offset: 2px; }
+.chordkeys-backdrop { position: fixed; z-index: 2147483647; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 12px; background: rgb(21 29 24 / 35%); font-family: system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+.chordkeys-panel { width: min(100%, 440px); padding: 17px 16px max(17px, env(safe-area-inset-bottom)); border: 1px solid #e5e2d9; border-radius: 18px; color: #202d28; background: #fffefa; box-shadow: 0 12px 40px rgb(0 0 0 / 25%); }
+.chordkeys-panel header { display: flex; align-items: center; justify-content: space-between; font-size: 18px; }
+.chordkeys-close { width: 36px; height: 36px; padding: 0; border: 0; border-radius: 9px; color: #46554b; background: #f1f2ed; font: 28px/1 system-ui, sans-serif; cursor: pointer; }
+.chordkeys-notes { margin: 3px 0 14px; color: #737b74; font: 13px/1.4 system-ui, sans-serif; }
+.mini-keyboard { position: relative; display: flex; height: 150px; overflow: hidden; border-radius: 0 0 6px 6px; }
+.mini-key { position: relative; }
+.mini-key.white { z-index: 1; flex: 1; border: 1px solid #d7d8d1; border-right-width: 0; border-radius: 0 0 5px 5px; background: linear-gradient(#fff 0%, #fff 78%, #f3f2ec 100%); }
+.mini-key.white:last-of-type { border-right-width: 1px; }
+.mini-key.black { position: absolute; z-index: 2; top: 0; width: 9%; height: 61%; transform: translateX(-50%); border: 1px solid #111a17; border-radius: 0 0 4px 4px; background: linear-gradient(90deg, #1a2420, #303a35 70%, #18211d); box-shadow: 2px 3px 3px rgb(0 0 0 / 20%); }
+.mini-key span { position: absolute; right: 0; bottom: 5px; left: 0; overflow: hidden; color: #747b73; font: 700 10px/1 system-ui, sans-serif; text-align: center; white-space: nowrap; }
+.mini-key.black span { bottom: 3px; color: #e9eee9; font-size: 8px; }
+.mini-key.tone::after { position: absolute; top: 65%; left: 50%; width: 19px; height: 19px; transform: translate(-50%, -50%); border: 2px solid white; border-radius: 50%; background: #cce8d5; content: ""; }
+.mini-key.root::after { background: #f4c969; }
+.mini-key.black.tone::after { top: 68%; width: 16px; height: 16px; border-color: #28352e; }
+.mini-key.black.root::after { border-color: #ffe3a1; }
+.mini-key.tone span { z-index: 3; color: #234f3e; }
+.mini-key.black.tone span { color: white; }

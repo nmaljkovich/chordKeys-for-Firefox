@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chordKeys site settings</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="sites.js" defer></script>
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main class="settings">
+    <header>
+      <p class="eyebrow">CHORDKEYS</p>
+      <h1>Allowed sites</h1>
+      <p class="intro">Choose which music sites can show piano chord buttons. The extension checks only the sites listed here.</p>
+    </header>
+
+    <form id="site-form" novalidate>
+      <label for="site-host">Add a site</label>
+      <div class="add-row">
+        <input id="site-host" name="host" type="text" inputmode="url" autocapitalize="none" autocomplete="url" spellcheck="false" placeholder="example.com" aria-describedby="site-help site-status">
+        <button class="add-button" type="submit">Add site</button>
+      </div>
+      <p id="site-help" class="help">Enter a hostname only, such as <code>example.com</code>. Subdomains are included.</p>
+      <p id="site-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section aria-labelledby="list-title">
+      <h2 id="list-title">Enabled sites</h2>
+      <ul id="site-list" class="site-list"></ul>
+    </section>
+
+    <p class="footnote">Adding a custom site asks Firefox for access to that site. Changes take effect on the next page load; refresh an already-open page.</p>
+  </main>
+</body>
+</html>

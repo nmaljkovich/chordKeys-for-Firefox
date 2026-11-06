@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "chordKeys — piano chord helper",
+  "version": "1.0.0",
+  "description": "See the piano keys for chord symbols on guitar chord sites.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "piano-chord-helper@chordkeys.local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ultimate-guitar.com/*",
+        "*://*.lacuerda.net/*",
+        "*://*.cifraclub.com/*"
+      ],
+      "js": ["chords.js", "extension/sites.js", "extension/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage"],
+  "optional_permissions": ["<all_urls>"],
+  "background": {
+    "scripts": ["extension/sites.js", "extension/background.js"],
+    "persistent": false
+  },
+  "options_ui": {
+    "page": "extension/options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": ["extension/content.css"]
+}
